@@ -37,7 +37,6 @@
   }
   button {
     @apply font-medium text-[16px];
-
   }
 }
 /* 
@@ -50,19 +49,26 @@
   }
 } */
 
-@utility flex-center{
-  display:flex;
+@utility flex-center {
+  display: flex;
   justify-content: center;
-  align-items:center;
-  
+  align-items: center;
 }
-@utility flex-center-col{
-  display:flex;
-  flex-direction:column;
+@utility flex-center-col {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
-  align-items:center;
+  align-items: center;
 }
 
-@utility hero-bg{
-  background-image: url('@/public/hero.avif')
+@utility hero-bg {
+  background: linear-gradient(
+      0deg,
+      rgba(0, 0, 0, 0.25) 0%,
+      rgba(0, 0, 0, 0.25) 100%
+    ),
+    url("@/public/hero.avif");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
