@@ -2,7 +2,7 @@ export default function Home() {
   return (
     <main className="">
       {/* Hero section */}
-      <section className="flex-center h-screen text-off-white hero-bg">
+      <section className="relative flex-center h-screen text-off-white hero-bg">
         <div className="flex-center-col gap-6 md:gap-10 lg:gap-16">
           {/* headings */}
           <div className="flex-center-col gap-1">
@@ -30,6 +30,18 @@ export default function Home() {
             </svg>
           </div>
         </div>
+      </section>
+
+      {/* floating card section */}
+      <section className="top-[92%] right-0 absolute md:items-center md:grid grid-cols-2 bg-off-white md:p-5 px-10 py-7 w-[80%] md:w-[90%]">
+        <h3 className="w-[300px] md:w-[300px] phone:w-[400px] font-medium text-2xl phone:text-3xl">
+          Custom homes built by humans, for humans
+        </h3>
+        <p className="hidden md:flex">
+          We work hard to understand your requirements and share your
+          aspirations and aim to build a strong, trusting relationship as we
+          guide you through the design and construction process.
+        </p>
       </section>
     </main>
   );
