@@ -1,7 +1,12 @@
-import Image from "next/image";
 
 export default function Home() {
   return (
-   <div></div>
+
+   <main className="">
+    {/* Hero section */}
+    <section className="h-screen object-fill hero-bg">
+
+    </section>
+   </main>
   );
 }

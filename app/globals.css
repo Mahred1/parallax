@@ -18,25 +18,25 @@
     color: var(--off-black);
   }
   h1 {
-    @apply text-[80px] font-normal;
+    @apply font-normal text-[80px];
   }
   h2 {
-    @apply text-[52px] font-normal;
+    @apply font-normal text-[52px];
   }
   h3 {
-    @apply text-[38px] font-normal;
+    @apply font-normal text-[38px];
   }
   h4 {
-    @apply text-[24px] font-normal;
+    @apply font-normal text-[24px];
   }
   h5 {
-    @apply text-[16px] font-normal;
+    @apply font-normal text-[16px];
   }
   p {
-    @apply text-[20px] font-normal;
+    @apply font-normal text-[20px];
   }
   button {
-    @apply text-[16px] font-medium;
+    @apply font-medium text-[16px];
 
   }
 }
@@ -61,4 +61,8 @@
   flex-direction:column;
   justify-content: center;
   align-items:center;
+}
+
+@utility hero-bg{
+  background-image: url('@/public/hero.avif')
 }

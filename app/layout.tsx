@@ -25,7 +25,6 @@ export default function RootLayout({
         className={`${PublicSans.variable} bg-off-black  antialiased`}
       >
         <Navigation />
-        <h1>test</h1>
         {children}
       </body>
     </html>

@@ -2,9 +2,9 @@ import React from "react";
 
 export const Navigation = () => {
   return (
-    <nav className="md:h-20 h-15 lg:h-23   flex justify-between items-center">
+    <nav className="top-0 left-0 z-10 fixed flex justify-between items-center min-w-full h-15 md:h-20 lg:h-23">
       {/* logo */}
-      <div className="bg-off-grey  max-w-fit min-h-full lg:px-6  px-4 grid place-content-center">
+      <div className="place-content-center grid bg-off-grey px-4 lg:px-6 max-w-fit min-h-full">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="93"
@@ -29,7 +29,7 @@ export const Navigation = () => {
       {/* nav links & cta group */}
       <div className="flex items-center gap-8 h-full">
         {/* navlinks */}
-        <ul className="md:flex-center gap-10 lg:gap-16 hidden">
+        <ul className="hidden md:flex-center gap-10 lg:gap-16">
           <li className="font-4 text-off-white cursor-pointer">About</li>
           <li className="font-4 text-off-white cursor-pointer">Press</li>
           <li className="font-4 text-off-white cursor-pointer">Blog</li>
@@ -37,7 +37,7 @@ export const Navigation = () => {
         </ul>
 
         {/* cta button */}
-        <div className="bg-off-black hidden text-off-white md:flex  items-center gap-2 font-bold max-w-fit px-6 min-h-full">
+        <div className="hidden md:flex items-center gap-2 bg-off-black px-6 max-w-fit min-h-full font-bold text-off-white">
           <button>Get a Quote</button>
           <svg
             className="mt-1"
@@ -56,10 +56,10 @@ export const Navigation = () => {
       </div>
 
       {/* ham-burger menu */}
-      <div className="w-[38px] h-[60px] flex-center-col gap-2 mr-5 cursor-pointer md:hidden">
-        <div className="w-full h-[3px] bg-off-white rounded"></div>
-        <div className="w-full h-[3px] bg-off-white rounded"></div>
-        <div className="w-full h-[3px] bg-off-white rounded"></div>
+      <div className="md:hidden flex-center-col gap-2 mr-5 w-[38px] h-[60px] cursor-pointer">
+        <div className="bg-off-white rounded w-full h-[3px]"></div>
+        <div className="bg-off-white rounded w-full h-[3px]"></div>
+        <div className="bg-off-white rounded w-full h-[3px]"></div>
       </div>
     </nav>
   );
