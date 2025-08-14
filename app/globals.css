@@ -10,6 +10,7 @@
   --color-off-white: var(--off-white);
   --color-off-grey: var(--off-grey);
   --font-sans: var(--font-public-sans);
+  --breakpoint-phone: 390px;
 }
 
 @layer base {
@@ -17,45 +18,34 @@
     color: var(--off-black);
   }
   h1 {
-    font-size: 80px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[80px] font-normal;
   }
   h2 {
-    font-size: 52px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[52px] font-normal;
   }
   h3 {
-    font-size: 38px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[38px] font-normal;
   }
   h4 {
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
+    @apply text-[24px] font-normal;
   }
   h5 {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[16px] font-normal;
   }
   p {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[20px] font-normal;
   }
   button {
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+    @apply text-[16px] font-medium;
+
+  }
+}
+
+@layer utilities{
+  .flex-center {
+    @apply flex justify-center items-center
+  }
+  .flex-center-col{
+    @apply felx flex-col justify-center items-center
   }
 }
