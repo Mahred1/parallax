@@ -1,4 +1,6 @@
-export default function Home() {
+import  Experties  from "./_components/Experties";
+
+export default function Page() {
   return (
     <main className="">
       {/* Hero section */}
@@ -49,9 +51,11 @@ export default function Home() {
         <div className="w-[80%]">
           <h4>Our Experties</h4>
           {/* experties */}
-          <div>
-            
-          </div>
+          <ul>
+            <Experties details={{title:"home",position:1}}>
+              <Experties.Title/>
+            </Experties>
+          </ul>
         </div>
       </section>
     </main>
