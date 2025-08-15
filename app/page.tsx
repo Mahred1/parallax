@@ -1,3 +1,4 @@
+import Experties from "./_components/Experties";
 
 export default function Page() {
   return (
@@ -35,7 +36,7 @@ export default function Page() {
 
       {/* floating card section */}
       <section className="top-[92%] right-0 absolute md:items-center md:grid grid-cols-2 bg-off-white md:p-5 px-10 py-7 w-[80%] md:w-[90%] overflow-x-hidden">
-        <h3 className="w-[300px] md:w-[300px] phone:w-[400px] font-medium text-2xl phone:text-3xl">
+        <h3 className="w-[90%] md:w-[300px] phone:w-[98%] font-normal sm:font-medium text-2xl phone:text-3xl">
           Custom homes built by humans, for humans
         </h3>
         <p className="hidden md:flex">
@@ -46,12 +47,15 @@ export default function Page() {
       </section>
 
       {/* Experties Section */}
-      <section className="flex-center bg-off-white py-30">
+      <section className="flex-center bg-off-grey py-30">
         <div className="w-[80%]">
-          <h4>Our Experties</h4>
+          <h4 className="mb-8">Our Experties</h4>
           {/* experties */}
           <ul>
-            
+            <Experties details={{title:"Home",position:1}} />
+            <Experties details={{title:"Multi Residential",position:2}} />
+            <Experties details={{title:"Education",position:3}} />
+            <Experties details={{title:"Commercial/Public",position:1}} />
           </ul>
         </div>
       </section>

@@ -2,15 +2,15 @@ import React from "react";
 
 type Details = {
   title: string;
-  postion: number;
+  position: number;
 };
 
 const Experties = ({ details }: { details: Details }) => {
   return (
-    <li>
-      <div>
-        <h5>{details.postion}</h5>
-        <h5>{details.title}</h5>
+    <li className="flex justify-between items-center border-b-1 border-off-black pb-1 ">
+      <div className="flex-center gap-2 ">
+        <h5>{`0${details.position}`}</h5>
+        <h5 className="uppercase">{details.title}</h5>
       </div>
       <svg
         xmlns="http://www.w3.org/2000/svg"
