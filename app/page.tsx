@@ -47,9 +47,9 @@ export default function Page() {
       </section>
 
       {/* Experties Section */}
-      <section className="flex-center bg-off-grey py-30">
+      <section className="flex-center bg-off-grey py-30 md:py-50">
         <div className="w-[80%]">
-          <h4 className="mb-8">Our Experties</h4>
+          <h4 className="mb-8 sm:mb-9 md:mb-10 lg:mb-12 font-medium sm:text-4xl md:text-5xl ">Our Experties</h4>
           {/* experties */}
           <ul>
             <Experties details={{title:"Home",position:1}} />
