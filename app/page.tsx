@@ -1,4 +1,3 @@
-import  Experties  from "./_components/Experties";
 
 export default function Page() {
   return (
@@ -52,9 +51,7 @@ export default function Page() {
           <h4>Our Experties</h4>
           {/* experties */}
           <ul>
-            <Experties details={{title:"home",position:1}}>
-              <Experties.Title/>
-            </Experties>
+            
           </ul>
         </div>
       </section>
