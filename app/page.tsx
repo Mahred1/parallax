@@ -1,4 +1,5 @@
 import Experties from "./_components/Experties";
+import Project from "./_components/Project";
 
 export default function Page() {
   return (
@@ -47,7 +48,7 @@ export default function Page() {
       </section>
 
       {/* Experties Section */}
-      <section className="flex-center bg-off-grey py-30 md:py-50">
+      <section className="flex-center bg-off-grey pt-30 pb-15 md:pt-50 md:pb-25">
         <div className="w-[80%]">
           <h4 className="mb-8 sm:mb-9 md:mb-10 lg:mb-12 font-medium sm:text-4xl md:text-5xl ">Our Experties</h4>
           {/* experties */}
@@ -58,6 +59,11 @@ export default function Page() {
             <Experties details={{title:"Commercial/Public",position:1}} />
           </ul>
         </div>
+      </section>
+
+      {/* Projects Section */}
+      <section>
+        <Project></Project>
       </section>
     </main>
   );
