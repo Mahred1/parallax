@@ -64,13 +64,23 @@ export default function Page() {
       </section>
 
       {/* Projects Section */}
-      <section className="text-white bg-off-black pt-10 pb-16 ">
-        <div className="w-[90%] md:w-[80%] mx-auto flex flex-col mt-5 md:mt-15  overflow-x-hidden">
+      <section className="relative text-white bg-off-black pt-10 pb-16 ">
+         
+        {/* white overlay */}
+        <div className="bg-off-white  absolute right-0 bottom-0 h-[106%] w-[50%] lg:w-[35%] sm:w-[25%] sm:block hidden "></div>
+        <div className="bg-off-black  absolute left-0 bottom-0 h-[100%] w-[60%] lg:w-[75%] sm:w-[80%] sm:block hidden "></div>
+ 
+        {/* Container */}
+        <div className="w-[95%] relative z-10 md:w-[90%] ml-auto flex flex-col mt-5 md:mt-15  overflow-x-hidden">
+
+          {/* heading */}
           <div className="flex-center phone:justify-start ">
             <h4 className="border-b-2 pb-2  md:w-[50%] lg:w-[40%] sm:pb-4 sm:w-[60%] phone:w-[53 %] sm:text-4xl phone:text-2xl phone:pb-3 ">
               Previous Projects
             </h4>
           </div>
+
+          {/* Projects container */}
           <div className=" mt-10 md:mt-25 flex gap-16 overflow-x-scroll no-scrollbar ">
             <Project
               name="Le Grand Hotel"
@@ -78,14 +88,14 @@ export default function Page() {
               src="/res1.jpg"
             />
             <Project
-              name="Le Grand Hotel"
-              location="Bordeaux, France"
-              src="/res1.jpg"
+              name="casa del sol"
+              location="Alcalá de Henares, Spain"
+              src="/hero.avif"
             />
-            <Project
-              name="Le Grand Hotel"
-              location="Bordeaux, France"
-              src="/res1.jpg"
+            <Project 
+              name="Jessamine"
+              location="Dhaka, bangladesh"
+              src="/res2.jpg"
             />
           </div>
         </div>
