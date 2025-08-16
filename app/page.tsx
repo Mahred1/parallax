@@ -100,12 +100,14 @@ export default function Page() {
       </section>
 
       {/* Quote Section */}
-    <section className="bg-off-grey flex-center">
-      <div className="flex-center-col">
-        <h5>ready to get started?</h5>
-        <h4>Let’s make your dream a reality</h4>
-         {/* cta */}
-          <div className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white">
+      <section className="bg-off-grey flex-center py-16 px-3 md:py-24 lg:py-27">
+        <div className="flex-center-col gap-8 md:gap-10 lg:gap-13 ">
+          <div className="flex-center-col md:gap-1  lg:gap-3  ">
+            <h5 className="md:text-xl" >ready to get started?</h5>
+            <h4 className="sm:text-3xl md:text-4xl lg:text-5xl">Let’s make your dream a reality</h4>
+          </div>
+          {/* cta */}
+          <div className="flex items-center gap-2 bg-off-black px-6 md:px-9 max-w-fit h-15 md:h-15 lg:h-15 font-bold text-off-white">
             <button>Get a Quote</button>
             <svg
               className="mt-1"
@@ -121,8 +123,8 @@ export default function Page() {
               />
             </svg>
           </div>
-      </div>
-    </section>
+        </div>
+      </section>
     </main>
   );
 }
