@@ -50,20 +50,31 @@ export default function Page() {
       {/* Experties Section */}
       <section className="flex-center bg-off-grey pt-30 pb-15 md:pt-50 md:pb-25">
         <div className="w-[80%]">
-          <h4 className="mb-8 sm:mb-9 md:mb-10 lg:mb-12 font-medium sm:text-4xl md:text-5xl ">Our Experties</h4>
+          <h4 className="mb-8 sm:mb-9 md:mb-10 lg:mb-12 font-medium sm:text-4xl md:text-5xl ">
+            Our Experties
+          </h4>
           {/* experties */}
           <ul>
-            <Experties details={{title:"Home",position:1}} />
-            <Experties details={{title:"Multi Residential",position:2}} />
-            <Experties details={{title:"Education",position:3}} />
-            <Experties details={{title:"Commercial/Public",position:1}} />
+            <Experties details={{ title: "Home", position: 1 }} />
+            <Experties details={{ title: "Multi Residential", position: 2 }} />
+            <Experties details={{ title: "Education", position: 3 }} />
+            <Experties details={{ title: "Commercial/Public", position: 1 }} />
           </ul>
         </div>
       </section>
 
       {/* Projects Section */}
-      <section>
-        <Project></Project>
+      <section className="text-white bg-off-black pt-10 ">
+        <div className="w-[90%] mx-auto flex flex-col items-center">
+          <h4 className="border-b-2 pb-2 text-center">Previous Projects</h4>
+          <div className=" mt-10">
+            <Project
+              name="Le Grand Hotel"
+              location="Bordeaux, France"
+              src="/res1.jpg"
+            />
+          </div>
+        </div>
       </section>
     </main>
   );
