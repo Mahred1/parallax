@@ -11,7 +11,7 @@ const Project = (props: ProjectProps) => {
   const { name, location, src } = props;
   return (
     <div className="text-off-white flex flex-col gap-4">
-      <div className="w-[345px] h-[515px] relative ">
+      <div className="w-[345px] h-[515px] relative  ">
         <Image
           src={src}
           alt="reidential project"

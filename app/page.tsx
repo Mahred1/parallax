@@ -65,9 +65,23 @@ export default function Page() {
 
       {/* Projects Section */}
       <section className="text-white bg-off-black pt-10 ">
-        <div className="w-[90%] mx-auto flex flex-col items-center">
-          <h4 className="border-b-2 pb-2 text-center">Previous Projects</h4>
-          <div className=" mt-10">
+        <div className="w-[90%] mx-auto flex flex-col  overflow-x-hidden">
+          <div className="flex-center phone:justify-start ">
+            <h4 className="border-b-2 pb-2 md:w-[40%] sm:pb-4 sm:w-[60%] phone:w-[53 %] sm:text-4xl phone:text-2xl phone:pb-3 ">
+              Previous Projects
+            </h4>
+          </div>
+          <div className=" mt-10 flex gap-16 overflow-x-scroll ">
+            <Project
+              name="Le Grand Hotel"
+              location="Bordeaux, France"  
+              src="/res1.jpg"
+            />
+            <Project
+              name="Le Grand Hotel"
+              location="Bordeaux, France"
+              src="/res1.jpg"
+            />
             <Project
               name="Le Grand Hotel"
               location="Bordeaux, France"
