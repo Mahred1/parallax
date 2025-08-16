@@ -2,7 +2,7 @@ import React from "react";
 
 export const Navigation = () => {
   return (
-    <nav className="top-0 left-0 z-10 fixed flex justify-between items-center min-w-full h-15 md:h-20 lg:h-23">
+    <nav className="top-0 left-0 z-100 fixed flex justify-between items-center min-w-full h-15 md:h-20 lg:h-23">
       {/* logo */}
       <div className="place-content-center grid bg-off-grey px-4 lg:px-6 max-w-fit min-h-full">
         <svg
