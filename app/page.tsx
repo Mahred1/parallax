@@ -64,14 +64,14 @@ export default function Page() {
       </section>
 
       {/* Projects Section */}
-      <section className="text-white bg-off-black pt-10 ">
-        <div className="w-[90%] mx-auto flex flex-col  overflow-x-hidden">
+      <section className="text-white bg-off-black pt-10 pb-16 ">
+        <div className="w-[90%] md:w-[80%] mx-auto flex flex-col mt-5 md:mt-15  overflow-x-hidden">
           <div className="flex-center phone:justify-start ">
-            <h4 className="border-b-2 pb-2 md:w-[40%] sm:pb-4 sm:w-[60%] phone:w-[53 %] sm:text-4xl phone:text-2xl phone:pb-3 ">
+            <h4 className="border-b-2 pb-2  md:w-[50%] lg:w-[40%] sm:pb-4 sm:w-[60%] phone:w-[53 %] sm:text-4xl phone:text-2xl phone:pb-3 ">
               Previous Projects
             </h4>
           </div>
-          <div className=" mt-10 flex gap-16 overflow-x-scroll ">
+          <div className=" mt-10 md:mt-25 flex gap-16 overflow-x-scroll no-scrollbar ">
             <Project
               name="Le Grand Hotel"
               location="Bordeaux, France"  
