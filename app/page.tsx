@@ -134,10 +134,10 @@ export default function Page() {
         </section>
       </main>
       {/* Footer ASection */}
-      <footer className="bg-off-white py-32 px-11 flex justify-between items-start">
-        <div className="flex items-start gap-16">
+      <footer className="bg-off-white py-32 px-3 sm:px-8 md:px-11 flex flex-col md:flex-row justify-between items-start flex-wrap gap-8">
+        <div className="flex flex-col md:flex-row flex-wrap items-start gap-6 md:gap-8 lg:gap-16">
           {" "}
-          <div className="place-content-center grid px-4 mt-1 lg:px-6 max-w-fit min-h-full">
+          <div className="place-content-center grid  mt-1 max-w-fit min-h-full">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="93"
@@ -158,25 +158,25 @@ export default function Page() {
               </defs>
             </svg>
           </div>
-          <div className="flex-center-col gap-6">
-            <h5 className="text-2xl font-medium">HELP</h5>
-            <ul className="flex-center-col gap-4">
-              <li className="text-[#7575758f] text-xl">HOME</li>
-              <li className="text-[#7575758f] text-xl">ABOUT</li>
-              <li className="text-[#7575758f] text-xl">PRESS</li>
-              <li className="text-[#7575758f] text-xl">BLOG</li>
+          <div className="flex-col items-start flex gap-4 md:gap-6">
+            <h5 className=" text-xl md:text-2xl font-medium">HELP</h5>
+            <ul className="flex-col flex items-start  gap-2 sm:gap-3 md:gap-4">
+              <li className="text-[#7575758f] text-lg md:text-xl">HOME</li>
+              <li className="text-[#7575758f] text-lg md:text-xl">ABOUT</li>
+              <li className="text-[#7575758f] text-lg md:text-xl">PRESS</li>
+              <li className="text-[#7575758f] text-lg md:text-xl">BLOG</li>
             </ul>
           </div>
-          <div className="flex-center-col gap-6">
-            <h5 className="text-2xl font-medium">SOCIAL</h5>
-            <ul className="flex-center-col gap-4">
-              <li className="text-[#7575758f] text-xl">FACEBOOK</li>
-              <li className="text-[#7575758f] text-xl">INSTAGRAM</li>
-              <li className="text-[#7575758f] text-xl">TWITTER</li>
+          <div className="flex-col flex items-start gap-4 md:gap-6">
+            <h5 className="md:text-2xl text-xl font-medium">SOCIAL</h5>
+            <ul className="flex-col items-start flex gap-4">
+              <li className="text-[#7575758f] text-lg md:text-xl">FACEBOOK</li>
+              <li className="text-[#7575758f] text-lg md:text-xl">INSTAGRAM</li>
+              <li className="text-[#7575758f] text-lg md:text-xl">TWITTER</li>
             </ul>
           </div>
         </div>
-        <div className="flex-center-col items-start gap-16 w-[35%]">
+        <div className="flex-center-col items-start mt-10 md:mt-0 gap-6 md:gap-16 w-[75%] md:w-[35%]">
           <h4>NEWSLETTER</h4>
           <div className="flex justify-between border-b-1 w-full pb-3">
             <h4 className="text-xl">EMAIL</h4>
