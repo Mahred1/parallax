@@ -1,13 +1,20 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 
 const Loader = () => {
+
+const logo = useRef(null)
+const leftCover =useRef(null)
+const rightCover =useRef(null)
+
+
+
   return (
     <div className="fixed top-0 left-0 min-h-screen min-w-screen z-1000 flex">
-      <div  className="bg-off-black h-screen w-1/2"></div>
-      <div className="bg-off-black h-screen w-1/2"></div>
+      <div ref={leftCover}  className="bg-off-black h-screen w-1/2"></div>
+      <div ref={rightCover} className="bg-off-black h-screen w-1/2"></div>
       {/* logo */}
-      <div className=" fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  ">
+      <div ref={logo} className=" fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  ">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="150"
