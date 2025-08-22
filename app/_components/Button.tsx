@@ -1,41 +1,73 @@
-"use client"
+"use client";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { SplitText } from "gsap/all";
-import  { useRef } from "react";
+import { useRef } from "react";
 
 const Button = () => {
-  const btn = useRef(null);
+  const btn1 = useRef(null);
+  const btn2 = useRef(null);
   const container = useRef<HTMLDivElement>(null);
   useGSAP(() => {
-    const split = SplitText.create(btn.current, {
+    const split1 = SplitText.create(btn1.current, {
+      type: "chars",
+      mask: "chars",
+    });
+    const split2 = SplitText.create(btn2.current, {
       type: "chars",
       mask: "chars",
     });
 
-    const hoverIn = ()=>{
-        gsap.to(split.chars, {
+    const tl = gsap.timeline();
+    gsap.set(btn2.current, { display: "none" });
+    gsap.set(split2.chars, { y: 200 });
+
+    const hoverIn = () => {
+      tl.to(split1.chars, {
         y: -100,
-        duration: 1,
-        stagger: { each: 0.05 },
-      }); 
-    }
-    const hoverOut = ()=>{
-        gsap.to(split.chars, {
+        durztion: 1,
+        stagger: 0.05,
+
+        onComplete: () => {
+          gsap.to(btn2.current, { display: "block" });
+          gsap.to(btn1.current, { display: "none" });
+        },
+      });
+      tl.to(split2.chars, {
         y: 0,
-        duration: 0.5,
-        stagger: { each: 0.05 },
-      }); 
-    }
-     
- 
-    container.current?.addEventListener("mouseenter",hoverIn);
-    container.current?.addEventListener("mouseleave",hoverOut);
+        durztion: 0.5,
+        delay:0.1,
+        stagger: {
+          each: 0.03,
+          from: "start",
+        },
+        onComplete: () => {
+          gsap.set(btn2.current, { display: "none",duration:0 });
+          gsap.set(split2.chars, { y: 200,duration:0  });
+          gsap.set(split1.chars, { y: 0,duration:0  });
+          gsap.to(btn1.current, { display: "block",duration:0  });
+
+
+        },
+      });
+    };
+
+    container.current?.addEventListener("mouseenter", hoverIn);
+
+    return () => {
+      container.current?.removeEventListener("mouseenter", hoverIn);
+    };
   });
   return (
-    <div ref={container} className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white cursor-pointer">
-      <button ref={btn} className="cursor-pointer">
-        Get a Quote
+    <div
+      ref={container}
+      className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white cursor-pointer"
+    >
+      <button className="cursor-pointer flex flex-center-col overflow-hidden">
+        <span ref={btn1} >
+          Get a Quote
+        </span>
+        <span ref={btn2}>Get a Quote</span>
       </button>
       <svg
         className="mt-1"
