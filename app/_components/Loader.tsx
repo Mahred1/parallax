@@ -2,7 +2,7 @@
 import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
-const heroTimeline = gsap.timeline();
+export const heroTimeline = gsap.timeline();
 
 const Loader = () => {
   const logo = useRef(null);
