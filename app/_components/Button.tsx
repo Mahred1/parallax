@@ -1,9 +1,42 @@
-import React from "react";
+"use client"
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+import { SplitText } from "gsap/all";
+import  { useRef } from "react";
 
 const Button = () => {
+  const btn = useRef(null);
+  const container = useRef<HTMLDivElement>(null);
+  useGSAP(() => {
+    const split = SplitText.create(btn.current, {
+      type: "chars",
+      mask: "chars",
+    });
+
+    const hoverIn = ()=>{
+        gsap.to(split.chars, {
+        y: -100,
+        duration: 1,
+        stagger: { each: 0.05 },
+      }); 
+    }
+    const hoverOut = ()=>{
+        gsap.to(split.chars, {
+        y: 0,
+        duration: 0.5,
+        stagger: { each: 0.05 },
+      }); 
+    }
+     
+ 
+    container.current?.addEventListener("mouseenter",hoverIn);
+    container.current?.addEventListener("mouseleave",hoverOut);
+  });
   return (
-    <div className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white cursor-pointer">
-      <button>Get a Quote</button>
+    <div ref={container} className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white cursor-pointer">
+      <button ref={btn} className="cursor-pointer">
+        Get a Quote
+      </button>
       <svg
         className="mt-1"
         xmlns="http://www.w3.org/2000/svg"

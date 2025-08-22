@@ -6,6 +6,7 @@ export const heroTimeline = gsap.timeline();
 
 const Loader = () => {
   const logo = useRef(null);
+  const loader = useRef(null);
   const leftCover = useRef(null);
   const rightCover = useRef(null);
 
@@ -27,6 +28,7 @@ const Loader = () => {
         ease: "power2.inOut",
         onComplete: () => {
           gsap.to(rightCover.current, { display: "none" });
+          gsap.to(loader.current, { display: "none" });
         },
       },
       "<"
@@ -35,7 +37,7 @@ const Loader = () => {
   });
 
   return (
-    <div className="fixed top-0 left-0 min-h-screen min-w-screen z-1000 flex">
+    <div ref={loader} className="fixed top-0 left-0 min-h-screen min-w-screen z-1000 flex">
       <div ref={leftCover} className="bg-off-black h-screen w-1/2"></div>
       <div ref={rightCover} className="bg-off-black h-screen w-1/2"></div>
       {/* logo */}
