@@ -1,4 +1,5 @@
 import Experties from "./_components/Experties";
+import Headline from "./_components/Headline";
 import Loader from "./_components/Loader";
 import Project from "./_components/Project";
 
@@ -11,12 +12,7 @@ export default function Page() {
         <section className="relative flex-center h-screen text-off-white hero-bg">
           <div className="flex-center-col gap-6 md:gap-10 lg:gap-16">
             {/* headings */}
-            <div className="flex-center-col gap-1">
-              <h5 className="uppercase">PARALLAX CUSTOME HOMES</h5>
-              <h1 className="w-[90%] md:w-[500px] lg:w-[750px] phone:w-[80%] lg:text-[80px] text-4xl md:text-5xl text-center tracking-tight lg:">
-                You’re Unique. Your home should be, too
-              </h1>
-            </div>
+            <Headline />
 
             {/* cta */}
             <div className="flex items-center gap-2 bg-off-black px-6 md:px-8 max-w-fit h-15 md:h-18 lg:h-20 font-bold text-off-white">

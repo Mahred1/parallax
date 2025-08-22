@@ -15,19 +15,23 @@ const Loader = () => {
       x: "-100%",
       duration: 1,
       ease: "power2.inOut",
-      onComplete:()=>{
-        gsap.to(leftCover.current,{display:"none"})
-      }
+      onComplete: () => {
+        gsap.to(leftCover.current, { display: "none" });
+      },
     });
-    heroTimeline.to(rightCover.current, {
-      x: "100%",
-      duration: 1,
-      ease: "power2.inOut",
-      onComplete:()=>{
-        gsap.to(rightCover.current,{display:"none"})
-      }
-    },"<");
-    
+    heroTimeline.to(
+      rightCover.current,
+      {
+        x: "100%",
+        duration: 1,
+        ease: "power2.inOut",
+        onComplete: () => {
+          gsap.to(rightCover.current, { display: "none" });
+        },
+      },
+      "<"
+    );
+ 
   });
 
   return (
