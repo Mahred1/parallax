@@ -2,6 +2,10 @@ import type { Metadata } from "next";
 import {Public_Sans } from "next/font/google";
 import "./globals.css";
 import { Navigation } from "./_components/Navigation";
+import { gsap} from 'gsap'
+import {ScrollTrigger} from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const PublicSans = Public_Sans({
   variable: "--font-public-sans",
