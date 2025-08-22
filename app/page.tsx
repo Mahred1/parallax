@@ -1,4 +1,5 @@
 import Experties from "./_components/Experties";
+import Loader from "./_components/Loader";
 import Project from "./_components/Project";
 
 export default function Page() {
@@ -6,6 +7,7 @@ export default function Page() {
     <>
       <main className="">
         {/* Hero section */}
+        <Loader />
         <section className="relative flex-center h-screen text-off-white hero-bg">
           <div className="flex-center-col gap-6 md:gap-10 lg:gap-16">
             {/* headings */}
