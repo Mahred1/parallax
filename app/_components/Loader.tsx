@@ -1,20 +1,44 @@
 "use client";
 import React, { useRef } from "react";
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+const heroTimeline = gsap.timeline();
 
 const Loader = () => {
+  const logo = useRef(null);
+  const leftCover = useRef(null);
+  const rightCover = useRef(null);
 
-const logo = useRef(null)
-const leftCover =useRef(null)
-const rightCover =useRef(null)
-
-
+  useGSAP(() => {
+    heroTimeline.to(logo.current, { opacity: 0 });
+    heroTimeline.to(leftCover.current, {
+      x: "-100%",
+      duration: 1,
+      ease: "power2.inOut",
+      onComplete:()=>{
+        gsap.to(leftCover.current,{display:"none"})
+      }
+    });
+    heroTimeline.to(rightCover.current, {
+      x: "100%",
+      duration: 1,
+      ease: "power2.inOut",
+      onComplete:()=>{
+        gsap.to(rightCover.current,{display:"none"})
+      }
+    },"<");
+    
+  });
 
   return (
     <div className="fixed top-0 left-0 min-h-screen min-w-screen z-1000 flex">
-      <div ref={leftCover}  className="bg-off-black h-screen w-1/2"></div>
+      <div ref={leftCover} className="bg-off-black h-screen w-1/2"></div>
       <div ref={rightCover} className="bg-off-black h-screen w-1/2"></div>
       {/* logo */}
-      <div ref={logo} className=" fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  ">
+      <div
+        ref={logo}
+        className=" fixed top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2  "
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="150"
