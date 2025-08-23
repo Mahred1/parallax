@@ -2,7 +2,7 @@
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef } from "react";
 
 type Details = {
   title: string;
@@ -13,20 +13,8 @@ const Experties = ({ details }: { details: Details }) => {
   const text = useRef<HTMLDivElement>(null);
   const container = useRef<HTMLLIElement>(null);
   const icon = useRef(null);
+  const img = useRef<HTMLImageElement>(null);
 
-  const [[x,y],setPosition]= useState<number[]>([])
-
-  useEffect(()=>{
-    container.current?.addEventListener("mousemove",(e)=>{
-      console.log(e.clientX);
-    })
-    return ()=>{
-        container.current?.removeEventListener("mousemove",(e)=>{
-      setPosition([e.clientX,e.clientY])
-    })
-    }
-  },[])
-  
   useGSAP(() => {
     container.current?.addEventListener("mouseenter", () => {
       console.log("first");
@@ -38,7 +26,7 @@ const Experties = ({ details }: { details: Details }) => {
       gsap.to(text.current, { x: 20, duration: 1, ease: "power3.out" });
       gsap.to(icon.current, {
         fill: "black",
-        x:10,
+        x: 10,
         scale: 1.2,
         duration: 1,
         ease: "power3.out",
@@ -55,46 +43,29 @@ const Experties = ({ details }: { details: Details }) => {
       gsap.to(text.current, { x: 0, duration: 1, ease: "power3.out" });
       gsap.to(icon.current, {
         fill: "none",
-        x:0,
+        x: 0,
         scale: 1,
         duration: 1,
         ease: "power3.out",
       });
+      gsap.to(img.current, { display: "none", scale: 0 });
     });
 
-    return () => {
-      container.current?.removeEventListener("mouseenter", () => {
-        console.log("first");
-        gsap.to(container.current, {
-          backgroundColor: "#ccc",
-          duration: 1,
-          ease: "power3.out",
-        });
-        gsap.to(text.current, { x: 25, duration: 1, ease: "power3.out" });
-        gsap.to(icon.current, {
-          fill: "black",
-          scale: 1.2,
-          duration: 1,
-          ease: "power3.out",
-        });
-      });
+    container.current?.addEventListener("mousemove", function (e) {
+      const rect = container.current?.getBoundingClientRect();
+      const left = rect?.left;
+      const centerY = rect && rect.top + rect.height / 2;
+      const positionY = centerY && e.clientY - centerY;
+      const positionX = left && e.clientX - (left + 200);
 
-      container.current?.removeEventListener("mouseleave", () => {
-        console.log("last");
-        gsap.to(container.current, {
-          backgroundColor: "transparent",
-          duration: 1,
-          ease: "power3.out",
-        });
-        gsap.to(text.current, { x: 0, duration: 1, ease: "power3.out" });
-        gsap.to(icon.current, {
-          fill: "none",
-          scale: 1,
-          duration: 1,
-          ease: "power3.out",
-        });
+      gsap.set(img.current, { x: positionX, y: positionY });
+      gsap.to(img.current, {
+        display: "block",
+        scale: 1,
+        x: positionX,
+        y: positionY,
       });
-    };
+    });
   });
 
   return (
@@ -102,7 +73,14 @@ const Experties = ({ details }: { details: Details }) => {
       ref={container}
       className="flex cursor-pointer justify-between items-center border-b-1 border-off-black pb-1.5 md:pb-2.5 mb-4 md:mb-6 relative "
     >
-      <Image className="container.current?. z-10 hidden" src='/res1.jpg' alt="resident" width={250} height={350} />
+      <Image
+        ref={img}
+        className={`absolute z-10 hidden  scale-0 pointer-events-none`}
+        src="/res1.jpg"
+        alt="resident"
+        width={250}
+        height={350}
+      />
       <div ref={text} className="flex-center gap-2 ">
         <h5 className="sm:text-xl md:text-2xl">{`0${details.position}`}</h5>
         <h5 className="uppercase sm:text-xl md:text-2xl">{details.title}</h5>

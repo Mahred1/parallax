@@ -39,7 +39,7 @@ export default function Page() {
               Our Experties
             </h4>
             {/* experties */}
-            <ul>
+            <ul >
               <Experties details={{ title: "Home", position: 1 }} />
               <Experties
                 details={{ title: "Multi Residential", position: 2 }}
