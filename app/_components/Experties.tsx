@@ -100,9 +100,9 @@ const Experties = ({ details }: { details: Details }) => {
   return (
     <li
       ref={container}
-      className="flex cursor-pointer justify-between items-center border-b-1 border-off-black pb-1.5 md:pb-2.5 mb-4 md:mb-6 "
+      className="flex cursor-pointer justify-between items-center border-b-1 border-off-black pb-1.5 md:pb-2.5 mb-4 md:mb-6 relative "
     >
-      {/* <Image src={@public/} /> */}
+      <Image className="container.current?. z-10 hidden" src='/res1.jpg' alt="resident" width={250} height={350} />
       <div ref={text} className="flex-center gap-2 ">
         <h5 className="sm:text-xl md:text-2xl">{`0${details.position}`}</h5>
         <h5 className="uppercase sm:text-xl md:text-2xl">{details.title}</h5>
