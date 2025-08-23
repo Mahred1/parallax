@@ -1,4 +1,6 @@
-import React from "react";
+"use client";
+import { useGSAP } from "@gsap/react";
+import React, { useRef } from "react";
 
 type Details = {
   title: string;
@@ -6,13 +8,22 @@ type Details = {
 };
 
 const Experties = ({ details }: { details: Details }) => {
+  const text = useRef(null);
+  const container = useRef(null);
+  const icon = useRef(null);
+  useGSAP(() => {});
+
   return (
-    <li className="flex justify-between items-center border-b-1 border-off-black pb-1.5 md:pb-2.5 mb-4 md:mb-6 ">
-      <div className="flex-center gap-2 ">
+    <li
+      ref={container}
+      className="flex justify-between items-center border-b-1 border-off-black pb-1.5 md:pb-2.5 mb-4 md:mb-6 "
+    >
+      <div ref={text} className="flex-center gap-2 ">
         <h5 className="sm:text-xl md:text-2xl">{`0${details.position}`}</h5>
         <h5 className="uppercase sm:text-xl md:text-2xl">{details.title}</h5>
       </div>
       <svg
+        ref={icon}
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 37 36"
         fill="none"

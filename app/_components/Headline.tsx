@@ -25,7 +25,7 @@ const Headline = () => {
       <h5 className="uppercase">PARALLAX CUSTOME HOMES</h5>
       <h1
         ref={headline}
-        className="w-[90%] md:w-[500px] lg:w-[750px] phone:w-[80%] lg:text-[80px] text-4xl md:text-5xl text-center tracking-tight lg:"
+        className="w-[90%] md:w-[500px] lg:w-[728px] phone:w-[80%] lg:text-[80px] text-4xl md:text-5xl text-center tracking-tight lg:"
       >
         You’re Unique. Your home should be, too
       </h1>
