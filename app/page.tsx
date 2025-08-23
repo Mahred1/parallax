@@ -46,7 +46,7 @@ export default function Page() {
               />
               <Experties details={{ title: "Education", position: 3 }} />
               <Experties
-                details={{ title: "Commercial/Public", position: 1 }}
+                details={{ title: "Commercial/Public", position: 4 }}
               />
             </ul>
           </div>
