@@ -44,7 +44,7 @@ export default function Page() {
               <Experties
                 details={{ title: "Multi Residential", position: 2,src:"res2.jpg" }}
               />
-              <Experties details={{ title: "Education", position: 3,src:"home.avif" }} />
+              <Experties details={{ title: "Education", position: 3,src:"hero.avif" }} />
               <Experties
                 details={{ title: "Commercial/Public", position: 4,src:"res1.jpg" }}
               />

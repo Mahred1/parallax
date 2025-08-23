@@ -7,7 +7,7 @@ import React, { useRef } from "react";
 type Details = {
   title: string;
   position: number;
-  src:string
+  src: string;
 };
 
 const Experties = ({ details }: { details: Details }) => {
@@ -17,7 +17,7 @@ const Experties = ({ details }: { details: Details }) => {
   const img = useRef<HTMLImageElement>(null);
 
   useGSAP(() => {
-    container.current?.addEventListener("mouseenter", () => {
+    const hoverIn = () => {
       console.log("first");
       gsap.to(container.current, {
         backgroundColor: "#ccc",
@@ -32,9 +32,9 @@ const Experties = ({ details }: { details: Details }) => {
         duration: 1,
         ease: "power3.out",
       });
-    });
+    };
 
-    container.current?.addEventListener("mouseleave", () => {
+    const hoverOut = () => {
       console.log("last");
       gsap.to(container.current, {
         backgroundColor: "transparent",
@@ -50,9 +50,9 @@ const Experties = ({ details }: { details: Details }) => {
         ease: "power3.out",
       });
       gsap.to(img.current, { display: "none", scale: 0 });
-    });
+    };
 
-    container.current?.addEventListener("mousemove", function (e) {
+    const mouseMove = (e: MouseEvent) => {
       const rect = container.current?.getBoundingClientRect();
       const left = rect?.left;
       const centerY = rect && rect.top + rect.height / 2;
@@ -66,7 +66,17 @@ const Experties = ({ details }: { details: Details }) => {
         x: positionX,
         y: positionY,
       });
-    });
+    };
+
+    container.current?.addEventListener("mouseenter", hoverIn);
+    container.current?.addEventListener("mouseleave", hoverOut);
+    container.current?.addEventListener("mousemove",  function(e){mouseMove(e)});
+
+    return () => {
+      container.current?.removeEventListener("mouseenter", hoverIn);
+      container.current?.removeEventListener("mouseleave", hoverOut);
+      container.current?.removeEventListener("mousemove", function(e){mouseMove(e)} );
+    };
   });
 
   return (
@@ -91,7 +101,7 @@ const Experties = ({ details }: { details: Details }) => {
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 37 36"
         fill="none"
-        className="w-[37px] h-[36px] sm:w-[40px] sm:h-[40px] md:w-[45px] md:h-[45px] lg:w-[55px] lg:h-[55px] "
+        className="w-[37px] h-[36px] sm:w-[40px] sm:h-[40px] md:w-[45px] md:h-[45px] lg:w-[55px] lg:h-[55px] mr-2 mt-1"
       >
         <path
           d="M23.1956 11.562L24.0673 23.5081L21.9165 23.6614L21.3193 15.484L21.2803 14.947L10.782 25.2187L9.27196 23.6754L19.7703 13.4037L19.2342 13.3529L11.0704 12.5775L11.2713 10.4299L23.1956 11.562Z"
