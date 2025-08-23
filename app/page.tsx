@@ -40,13 +40,13 @@ export default function Page() {
             </h4>
             {/* experties */}
             <ul >
-              <Experties details={{ title: "Home", position: 1 }} />
+              <Experties details={{ title: "Home", position: 1 ,src:"res1.jpg" }} />
               <Experties
-                details={{ title: "Multi Residential", position: 2 }}
+                details={{ title: "Multi Residential", position: 2,src:"res2.jpg" }}
               />
-              <Experties details={{ title: "Education", position: 3 }} />
+              <Experties details={{ title: "Education", position: 3,src:"home.avif" }} />
               <Experties
-                details={{ title: "Commercial/Public", position: 4 }}
+                details={{ title: "Commercial/Public", position: 4,src:"res1.jpg" }}
               />
             </ul>
           </div>

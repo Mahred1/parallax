@@ -7,6 +7,7 @@ import React, { useRef } from "react";
 type Details = {
   title: string;
   position: number;
+  src:string
 };
 
 const Experties = ({ details }: { details: Details }) => {
@@ -76,7 +77,7 @@ const Experties = ({ details }: { details: Details }) => {
       <Image
         ref={img}
         className={`absolute z-10 hidden  scale-0 pointer-events-none`}
-        src="/res1.jpg"
+        src={`/${details.src}`}
         alt="resident"
         width={250}
         height={350}
